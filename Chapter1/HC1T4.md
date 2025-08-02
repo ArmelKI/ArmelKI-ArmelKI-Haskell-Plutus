@@ -51,7 +51,7 @@ J’ai beaucoup aimé cette tâche car elle m’a permis de jouer avec `map`, `t
 
 ## 🗂️ Fichiers livrés
 
-- `HC1T4_T4.hs` → Code et tests intégrés
-- `HC1T4_T4.md` → Documentation complète
+- `HC1T4.hs` → Code et tests intégrés
+- `HC1T4.md` → Documentation complète
 
 ---
