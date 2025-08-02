@@ -1,3 +1,5 @@
+## 📘 Fichier : `HC1T2.md`
+
 ````md
 # 🔗 HC1T2 — Fonction pure : Calculer l’aire d’un cercle
 
