@@ -1,77 +1,91 @@
 ## 📘 Fichier : `HC1T3.md`
 
-````md
-# 🔗 HC1T3 — Vérifier si un nombre est supérieur à 18
+# 🔗 HC1T3 — Tâche 3 : Vérifier si un nombre est supérieur à 18
 
 ---
 
 ## 📝 Présentation
 
-Cet exercice est très simple en apparence, mais il pose les bases d'une logique claire et typée. J’ai écrit une fonction `greaterThan18` qui teste si un entier donné est strictement supérieur à 18. Elle renvoie un booléen (`True` ou `False`) — donc parfaite pour un usage dans des conditions ou des filtres.
+Dans cette tâche, je dois écrire une fonction Haskell nommée `greaterThan18`, qui **prend un entier et indique s’il est strictement supérieur à 18**. C’est un cas simple de logique booléenne, mais c’est aussi l’occasion de s’approprier la syntaxe minimaliste de Haskell et de réfléchir à la clarté des signatures.
+
+La consigne que j’ai donnée est :
+> Écrire une fonction `greaterThan18` qui vérifie si un nombre donné est supérieur à 18.
 
 ---
 
-## 🎯 Ce que j’ai voulu explorer
-
-- Comment définir une fonction logique en Haskell
-- Ce que `Bool` représente et comment l’utiliser
-- L’intérêt de typer même les fonctions les plus simples
-
----
-
-## 🔧 Code que j’ai écrit
+## 🔧 Code complet avec `main`
 
 ```haskell
+-- HC1T3.hs
+
+-- Vérifie si le nombre est strictement supérieur à 18
 greaterThan18 :: Int -> Bool
-greaterThan18 x = x > 18
-```
+greaterThan18 n = n > 18
 
-Une seule ligne de définition, avec un typage clair : la fonction prend un `Int`, et renvoie un `Bool`.
-
----
-
-## ✅ Tests dans `main`
-
-J’ai intégré quelques cas dans `main` pour observer les sorties :
-
-```haskell
 main :: IO ()
 main = do
-  print (greaterThan18 10)   -- False
-  print (greaterThan18 18)   -- False
-  print (greaterThan18 19)   -- True
-  print (greaterThan18 100)  -- True
+  print (greaterThan18 10)  -- False
+  print (greaterThan18 18)  -- False
+  print (greaterThan18 19)  -- True
 ```
-
-| Entrée | Résultat |
-|--------|----------|
-| 10     | False    |
-| 18     | False    |
-| 19     | True     |
-| 100    | True     |
 
 ---
 
-## 📚 Ce que j’ai retenu
+## 🗂️ Décryptage détaillé
 
-| Concept        | Ce que j’ai compris                                              |
-|----------------|------------------------------------------------------------------|
-| Comparaison    | Une opération simple mais essentielle pour toute logique         |
-| Booléens       | `True` ou `False` permettent des décisions et des branches       |
-| Typage clair   | Même une fonction basique a intérêt à être bien typée            |
-| Précision      | `x > 18` est strict — `18` n’est pas accepté                     |
+### 🔸 `greaterThan18 :: Int -> Bool`
+
+- La fonction prend un seul **entier** (`Int`) et renvoie un **booléen** (`True` ou `False`).
+- La signature est très directe, et c’est une bonne pratique de l’écrire même si Haskell peut l’inférer — ça **clarifie le contrat attendu**.
+
+### 🔸 `greaterThan18 n = n > 18`
+
+- L’expression `n > 18` utilise un opérateur de comparaison standard.
+- Elle est **pure** : pas d’effets de bord, pas de contexte externe, juste une évaluation logique sur l’entrée.
+
+### 🔸 `main`
+
+- J’ai ajouté des appels de test dans la fonction `main`, pour observer le comportement avec plusieurs cas :
+  - Un nombre en dessous
+  - Le seuil lui-même
+  - Un nombre au-dessus
+
+---
+
+## ✅ Cas de test
+
+| Entrée `n` | Sortie attendue | Commentaire                          |
+|------------|------------------|--------------------------------------|
+| `10`       | `False`          | En dessous du seuil                  |
+| `18`       | `False`          | Égale au seuil, test important       |
+| `19`       | `True`           | Strictement supérieur, doit valider  |
+
+---
+
+## 📚 Ce que j’ai compris
+
+| Concept             | Ce que j’ai retenu                                                             |
+|---------------------|--------------------------------------------------------------------------------|
+| Fonction simple      | En Haskell, une logique booléenne s’exprime en une seule ligne claire         |
+| Signature explicite  | Même pour une fonction triviale, préciser le type améliore la lisibilité      |
+| Testabilité          | Tester différents cas limite est crucial (égalité, dépassement, sous-seuil)   |
 
 ---
 
 ## 🗒️ Mon avis personnel
 
-Ce genre d’exercice me paraît trivial à première vue, mais c’est en l’écrivant que j’ai réalisé pourquoi c’est important. Je peux maintenant imaginer `greaterThan18` dans un `filter`, ou dans une logique de validation utilisateur. Et en l’écrivant moi-même, je la comprends vraiment.
+Ce genre d’exercice me paraît fondamental : il **crée les bons réflexes**. Même si la logique est triviale, on s’entraîne à :
+- Écrire des signatures claires
+- Penser en mode test dès le départ
+- Respecter le style Haskell (déclaratif, épuré)
+
+Je commence à mieux voir ce que Haskell attend de moi : **des fonctions isolées, lisibles, et naturellement testables**. Et chaque petite tâche, bien faite, devient un bloc solide dans mon portfolio.
 
 ---
 
 ## 📂 Fichiers associés
 
-- `HC1T3.hs` → Code Haskell avec `main`
-- `HC1T3.md` → Documentation (ce fichier)
+- `HC1T3.hs` → Code source avec `main` et tests intégrés
+- `HC1T3.md` → Cette documentation rédigée à la première personne
 
 ---
