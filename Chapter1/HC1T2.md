@@ -86,5 +86,3 @@ Ce genre de fonction peut être la base pour une bibliothèque de calculs scient
 - `HC1T2.md` → Documentation structurée et commentée
 
 ---
-
----
