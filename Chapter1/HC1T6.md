@@ -1,67 +1,95 @@
 ## 📘 Fichier : `HC1T6.md`
 
-````md
-# ➕ HC1T6 — Signature de type et addition d'entiers
+# ➕ HC1T6 - Tâche 6 : Utilisation de signatures de type
 
 ---
 
-## 🎯 Objectif
+## 📝 Présentation
 
-Définir une fonction `addNumbers` qui prend deux entiers en entrée, et retourne leur somme. L’accent est mis sur l’importance de **la signature de type** claire et explicite.
+Dans cette tâche, je définis une fonction `addNumbers` qui prend deux entiers en entrée et retourne leur **somme**. L’objectif est de m’initier à l’écriture de **signatures de type explicites** en Haskell — une pratique essentielle pour rendre le code lisible, rigoureux et compréhensible dès le premier coup d’œil.
+
+La consigne exacte que j’ai donnée était :  
+> Définir une fonction `addNumbers` qui prend deux entiers et retourne leur somme.
 
 ---
 
-## 🧠 Démarche
+## 🔧 Code complet avec `main`
 
 ```haskell
+-- HC1T6.hs
+
+-- Signature de type : deux Int → un Int
 addNumbers :: Int -> Int -> Int
 addNumbers x y = x + y
-```
 
-La signature dit tout : `Int -> Int -> Int` signifie que la fonction attend **deux** `Int` successifs et renvoie un `Int`. C’est une des syntaxes les plus lisibles et pédagogiques en Haskell.
-
----
-
-## ✅ Tests intégrés
-
-```haskell
 main :: IO ()
 main = do
-  print (addNumbers 2 3)    -- 5
-  print (addNumbers 10 5)   -- 15
-  print (addNumbers (-3) 7) -- 4
-  print (addNumbers 0 0)    -- 0
+  print (addNumbers 3 4)   -- 7
+  print (addNumbers 10 5)  -- 15
+  print (addNumbers (-2) 8) -- 6
 ```
 
-| Appel                   | Résultat |
-|-------------------------|----------|
-| `addNumbers 2 3`        | `5`      |
-| `addNumbers 10 5`       | `15`     |
-| `addNumbers (-3) 7`     | `4`      |
-| `addNumbers 0 0`        | `0`      |
+---
+
+## 🗂️ Décryptage détaillé
+
+### 🔸 `addNumbers :: Int -> Int -> Int`
+
+- La signature `Int -> Int -> Int` signifie :
+  - Prend un premier `Int`
+  - Prend un deuxième `Int`
+  - Retourne un `Int` (leur somme)
+
+- C’est aussi une bonne occasion de comprendre **l’associativité à droite** des flèches :
+  - `Int -> Int -> Int` est équivalent à `Int -> (Int -> Int)`
+  - Autrement dit, `addNumbers` peut être vue comme une fonction **qui retourne une fonction**
+
+### 🔸 `addNumbers x y = x + y`
+
+- Le corps de la fonction est simple : une addition classique.
+
+### 🔸 `main`
+
+- Je vérifie que la fonction se comporte comme prévu avec des exemples concrets.
 
 ---
 
-## 📚 Ce que j’ai retenu
+## ✅ Cas de test
 
-| Concept              | Description |
-|----------------------|-------------|
-| Signature `::`       | Elle explicite les types attendus et retournés |
-| Currying             | Les fonctions en Haskell prennent leurs arguments un par un |
-| Clarté typée         | On comprend la logique juste en lisant le type |
-| Pureté fonctionnelle | `addNumbers` est une fonction pure — même entrée, même sortie |
+| Entrée          | Résultat attendu |
+|-----------------|------------------|
+| `addNumbers 3 4`  | `7`              |
+| `addNumbers 10 5` | `15`             |
+| `addNumbers (-2) 8` | `6`           |
 
 ---
 
-## 💬 Mon ressenti
+## 📚 Ce que j’ai compris
 
-Ce genre de fonction est simple à écrire, mais c’est justement ce qui la rend pédagogique : elle montre comment on explicite les types, et elle peut servir dans beaucoup de contextes plus complexes par la suite (addition vectorielle, somme d’éléments, etc.). Le typage m’a semblé naturel ici, mais je vois déjà comment il peut guider la conception de fonctions plus grandes.
+| Concept                    | Ce que j’en retiens                                              |
+|----------------------------|------------------------------------------------------------------|
+| Signature de type          | Permet de **documenter le contrat** attendu entre entrées et sortie |
+| Clarté fonctionnelle       | Une signature claire rend le code auto-explicite                |
+| Currying en Haskell        | Toute fonction à plusieurs arguments est en fait une suite de fonctions |
+| `Int -> Int -> Int`        | Me prépare à mieux comprendre les fonctions d’ordre supérieur   |
+
+---
+
+## 🗒️ Mon avis personnel
+
+Même si cette tâche est courte, elle pose une brique fondamentale de mon style Haskell :  
+Je veux que chaque fonction soit **aussi lisible que testable**, avec une signature explicite qui me permet de comprendre **ce qu’elle fait sans lire son corps**.
+
+C’est une étape vers :
+- Des fonctions plus abstraites
+- Des compositions plus claires
+- Une documentation naturelle par le typage
 
 ---
 
 ## 📂 Fichiers associés
 
-- `HC1T6.hs` → Code avec tests
-- `HC1T6.md` → Documentation commentée
+- `HC1T6.hs` → Code Haskell avec signature explicite
+- `HC1T6.md` → Cette fiche claire, précise, et fidèle à ma progression
 
 ---
