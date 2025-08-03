@@ -1,6 +1,6 @@
 ## 📘 Fichier : `HC1T5.md`
 
-# 🌀 HC1T5 — Tâche 5 : Paresse en Haskell
+# 🌀 HC1T5 - Tâche 5 : Paresse en Haskell
 
 ---
 
